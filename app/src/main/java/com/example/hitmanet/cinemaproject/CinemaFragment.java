@@ -14,27 +14,22 @@ import android.support.v4.app.Fragment;
 
 
 import com.example.hitmanet.cinemaproject.Adapters.MyAdapter;
-import com.example.hitmanet.cinemaproject.Interface.GetApi;
 import com.example.hitmanet.cinemaproject.Models.Movie;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+
 
 
 
 
 public class CinemaFragment extends Fragment {
-    private static final String BASE_URL = "https://api.themoviedb.org/3/movie/";
+
 
     private MyAdapter Adapter;
     private LinearLayoutManager mLayoutManager;
     private  List<Movie> movies;
-    private ProgressBar mpb;;
-    private GetApi api;
-    private  Retrofit retrofit;
     private static final String TAG = "MyApp";
 
     private int pageNumber;
@@ -42,25 +37,11 @@ public class CinemaFragment extends Fragment {
 
 
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        setRetainInstance(true);
-        movies = new ArrayList<>();
-
-        pageNumber = getArguments() != null ? getArguments().getInt("num") : 1;
-
-
-    }
 
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         RecyclerView mRecyclerView = (RecyclerView) inflater.inflate(
                 R.layout.fragment_cinema, container, false);
@@ -76,8 +57,6 @@ public class CinemaFragment extends Fragment {
 
 
 
-    public static void loadfilms() {
-    }
 }
 
 

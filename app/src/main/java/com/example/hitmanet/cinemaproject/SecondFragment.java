@@ -18,17 +18,16 @@ import android.widget.TextView;
 
 import com.example.hitmanet.cinemaproject.Adapters.MyAdapter;
 
-import com.example.hitmanet.cinemaproject.Interface.GetApi;
+
 import com.example.hitmanet.cinemaproject.Models.ClickDel;
 import com.example.hitmanet.cinemaproject.Models.DBHelper;
 import com.example.hitmanet.cinemaproject.Models.Movie;
-import com.example.hitmanet.cinemaproject.Models.MovieWish;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
-import retrofit2.Retrofit;
+
 
 /**
  * Created by Hitmanet on 19.02.2018.
@@ -47,7 +46,7 @@ public class SecondFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         RecyclerView mRecyclerView = (RecyclerView) inflater.inflate(
                 R.layout.fragment_cinema, container, false);
@@ -81,7 +80,6 @@ public class SecondFragment extends Fragment {
     }
 
     static class MyAdapterTwo extends RecyclerView.Adapter<MyAdapterTwo.ViewHolder> {
-        private List<MovieWish> movieWishes;
         private Context context;
         private String[] aName;
         private ClickDel[] delClicks;
