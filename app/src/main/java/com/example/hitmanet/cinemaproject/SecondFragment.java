@@ -110,9 +110,6 @@ public class SecondFragment extends Fragment {
 
         }
 
-
-
-
         @Override
         public int getItemCount() {
             return films.size();
@@ -121,7 +118,6 @@ public class SecondFragment extends Fragment {
         static class ViewHolder extends RecyclerView.ViewHolder {
             TextView movieTitle;
             Button delButton;
-
 
             ViewHolder(View itemView) {
                 super(itemView);

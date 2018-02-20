@@ -31,14 +31,7 @@ public class CinemaFragment extends Fragment {
     private LinearLayoutManager mLayoutManager;
     private  List<Movie> movies;
     private static final String TAG = "MyApp";
-
     private int pageNumber;
-
-
-
-
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
