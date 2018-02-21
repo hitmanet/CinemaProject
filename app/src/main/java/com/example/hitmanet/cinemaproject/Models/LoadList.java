@@ -36,12 +36,12 @@ public class LoadList extends Thread {
             movies = new ArrayList<>();
             okhttp3.Response response = client.newCall(request).execute();
 
-            JSONObject o = new JSONObject(response.body().string());
-            JSONArray a = o.getJSONArray("results");
-            for (int i = 0; i < a.length(); i++) {
-                movies.add(new Movie(a.getJSONObject(i).getString("title"),
-                        a.getJSONObject(i).getString("poster_path"),
-                        a.getJSONObject(i).getString("overview")));
+            JSONObject object = new JSONObject(response.body().string());
+            JSONArray array = object.getJSONArray("results");
+            for (int i = 0; i < array.length(); i++) {
+                movies.add(new Movie(array.getJSONObject(i).getString("title"),
+                        array.getJSONObject(i).getString("poster_path"),
+                        array.getJSONObject(i).getString("overview")));
             }
 
         } catch (IOException | JSONException e) {
